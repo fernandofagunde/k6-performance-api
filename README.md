@@ -1,5 +1,7 @@
 # k6 Performance API
 
+![k6 Performance Tests](https://github.com/fernandofagunde/k6-performance-api/actions/workflows/k6-performance-tests.yml/badge.svg)
+
 Projeto de estudos e portfólio com testes de performance, carga e stress utilizando k6 em uma API pública.
 
 ## Objetivo
