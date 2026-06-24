@@ -1,0 +1,19 @@
+{
+  "name": "k6-performance-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test:smoke": "k6 run tests/smoke-test.js",
+    "test:load": "k6 run tests/load-test.js",
+    "test:thresholds": "k6 run tests/load-test-thresholds.js",
+    "test:stress": "k6 run tests/stress-test.js",
+    "test:stress:report": "k6 run --summary-export=reports/stress-summary.json tests/stress-test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
