@@ -1,0 +1,37 @@
+name: k6 Performance Tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  k6-performance-tests:
+    name: Run k6 performance tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup k6
+        uses: grafana/setup-k6-action@v1
+
+      - name: Run smoke test
+        uses: grafana/run-k6-action@v1
+        with:
+          path: tests/smoke-test.js
+
+      - name: Run load test with thresholds
+        uses: grafana/run-k6-action@v1
+        with:
+          path: tests/load-test-thresholds.js
+
+      - name: Run stress test
+        uses: grafana/run-k6-action@v1
+        with:
+          path: tests/stress-test.js
